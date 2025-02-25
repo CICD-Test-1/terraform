@@ -1,8 +1,9 @@
-resource "aws_instance" "my_ec2" {
-  ami           = var.ami_id
-  instance_type = var.instance_type
+terraform {
+  required_version = ">= 1.0"
+}
 
-  tags = {
-    Name = "Jenkins-Terraform-Instance"
+resource "null_resource" "example" {
+  provisioner "local-exec" {
+    command = "echo 'Terraform Plan Completed'"
   }
 }
